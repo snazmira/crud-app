@@ -1,0 +1,42 @@
+<div class="row">
+        <div class="offset-md-3 col-md-6">
+          <div class="text-right" style="margin-top:50px;">
+              <button type="button" class="btn btn-info" routerLink="/employee">View List</button>
+          </div>
+            <form [formGroup]="addEmployee" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="exampleInputEmail1">First Name</label>
+                <input type="text" class="form-control" id="fname"  formControlName="fname">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Last Name</label>
+                <input type="text" class="form-control" id="lname"  formControlName="lname">
+              </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="InputEmail2"  formControlName="email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Phone Number</label>
+          <input type="number" class="form-control" id="InputPassword1"  formControlName="phoneNum">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Hire Date</label>
+            <input type="date" class="form-control" id="InputEmail1"  formControlName="hireDate">
+          </div>
+        <div class="form-group">
+                <label for="exampleInputEmail1">Job Title</label>
+                <input type="text"  class="form-control" id="InputEmail1"  formControlName="jobTitle">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Manager ID</label>
+                <input type="number" class="form-control" id="InputEmail1"  formControlName="managerId">
+              </div>
+                    <button type="submit" [disabled]="!addEmployee.valid" class="btn btn-info">Submit</button>
+                  </form>
+                  <div class="alert alert-success" *ngIf="addMessageShow" role="alert" style="margin-top:50px;">
+                      {{ addMessage }}
+                    </div>
+                </div>
+    </div>
+    
